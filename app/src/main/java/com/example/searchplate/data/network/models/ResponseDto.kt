@@ -6,6 +6,8 @@ import androidx.annotation.Keep
 
 @Keep
 data class ResponseDto(
+    @SerializedName("msg")
+    val msg: String,
     @SerializedName("celebracaoContrato")
     val celebracaoContrato: Boolean,
     @SerializedName("documentos")

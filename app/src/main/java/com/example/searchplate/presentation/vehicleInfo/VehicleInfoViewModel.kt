@@ -1,8 +1,9 @@
-package com.example.searchplate.presentation
+package com.example.searchplate.presentation.vehicleInfo
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.searchplate.data.VinRepository
+import com.example.searchplate.data.InfoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,11 +13,18 @@ import javax.inject.Inject
 
 @HiltViewModel
 class VehicleInfoViewModel @Inject constructor(
-    private val repository: VinRepository,
+    private val repository: InfoRepository,
+    private val stateHandle: SavedStateHandle,
 ): ViewModel() {
 
     private val _vehicleInfoState = MutableStateFlow(VehicleInfoState())
     val vehicleInfoState: StateFlow<VehicleInfoState> by lazy {
+        stateHandle.get<String>("plate")?.let { plate->
+            _vehicleInfoState.update {
+                it.copy(searchQuery = plate)
+            }
+            getVehicleInfoByPlate(plate)
+        }
         _vehicleInfoState
     }
 

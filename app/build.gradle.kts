@@ -28,6 +28,9 @@ val roomVersion = "2.6.1"
 val retrofitVersion = "2.9.0"
 val okhttpVersion = "4.12.0"
 
+val cameraxVersion = "1.3.2"
+val visionVersion = "20.1.3"
+
 val junitVersion = "4.13.2"
 val truthVersion = "1.1.3"
 val androidxTestCoreVersion = "1.5.0"
@@ -90,6 +93,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.material:material-icons-extended:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
     implementation("io.coil-kt:coil-compose:$coilVersion")
     implementation("androidx.core:core-ktx:$coreVersion")
@@ -125,6 +129,25 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
+
+    // Camerax
+    implementation("androidx.camera:camera-core:$cameraxVersion")
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-video:$cameraxVersion")
+    implementation("androidx.camera:camera-view:$cameraxVersion")
+    implementation("androidx.camera:camera-extensions:$cameraxVersion")
+
+    //TensorFlow
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.2")
+    implementation("org.tensorflow:tensorflow-lite-gpu-delegate-plugin:0.4.2")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.9.0")
+    implementation("org.tensorflow:tensorflow-lite-task-vision-play-services:0.4.2")
+    implementation("com.google.android.gms:play-services-tflite-gpu:16.2.0")
+
+    //Google Vision
+    implementation ("com.google.android.gms:play-services-vision:$visionVersion")
+
     // Unit tests
     testImplementation("io.mockk:mockk:1.12.2")
     testImplementation("junit:junit:$junitVersion")
@@ -145,5 +168,4 @@ dependencies {
     androidTestImplementation("androidx.test:runner:$androidxTestRunnerVersion")
     androidTestImplementation("androidx.test.ext:junit:$androidxTestExtJUnitVersion")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-
 }

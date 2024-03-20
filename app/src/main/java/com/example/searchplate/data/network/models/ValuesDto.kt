@@ -7,7 +7,7 @@ import androidx.annotation.Keep
 @Keep
 data class ValuesDto(
     @SerializedName("marca")
-    val brand: String,
+    val make: String,
     @SerializedName("matricula")
     val plate: String,
     @SerializedName("numQuadro")

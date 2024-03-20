@@ -1,7 +1,5 @@
 package com.example.searchplate.presentation.plateScanner
 
-import android.util.Rational
-import androidx.camera.core.ViewPort
 import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.PreviewView
 import androidx.compose.runtime.Composable

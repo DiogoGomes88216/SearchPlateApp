@@ -5,7 +5,6 @@ import androidx.camera.core.ImageProxy
 import com.example.searchplate.data.PlateScannerRepository
 import com.example.searchplate.presentation.crop
 import com.example.searchplate.presentation.rotate
-import com.google.android.gms.vision.Frame
 
 class LicensePlateImageAnalyzer (
     private val repo: PlateScannerRepository,
